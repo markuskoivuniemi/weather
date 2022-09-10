@@ -1,0 +1,12 @@
+.hour-container {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;      
+}
+
+.hour-container > div {
+    width: 90px;
+    height: 55px;
+    font-size: 40px;  
+}
