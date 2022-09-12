@@ -40,7 +40,7 @@
 body {
     height:100vh;
     width:100vw;
-    background:linear-gradient(120deg, #03cffc, #03cffc 65%, #03fcc2 65% 80%, #03fc8c 80% 95%, #03fc62 95% );
+    background:linear-gradient(110deg, #03cffc, #03cffc 65%, #03fcc2 65% 80%, #03fc8c 80% 95%, #03fc62 95% );
 }
 
 .nav-bar {

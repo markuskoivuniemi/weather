@@ -3,6 +3,7 @@ import { Parser } from 'xml2js';
 import React, { useState, useEffect } from 'react';
 import HourForecastBlock from './components/HourForecastBlock';
 import CurrentBlock from './components/CurrentBlock'
+import Dropdown from './components/Dropdown';
 
 function addHours(numOfHours, date = new Date()) {
   date.setTime(date.getTime() + numOfHours * 60 * 60 * 1000);
@@ -35,7 +36,8 @@ function App() {
   }, [location]);
 
   const GetForecast = async () => {
-    console.log("Fetching forecast data")
+    console.log("Fetching forecast data" + new Date())
+
     const url = `https://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::harmonie::surface::point::multipointcoverage&place=${location.toLowerCase()}&parameters=WeatherSymbol3,temperature,PrecipitationAmount,WindSpeedMS`
     const response = await fetch(url)
         .then(res => res.text())
@@ -106,6 +108,7 @@ function App() {
           </label>
         </form>
       </div>
+      <Dropdown/>
       <div className="main-container">
         <div className="weather-container">
           {forecastData && forecastData.map( (hour) => <HourForecastBlock data = {hour} /> )}
