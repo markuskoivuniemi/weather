@@ -17,15 +17,10 @@ function msToNextHour() {
 
 function App() {
 
+  const options = ["Oulunkylä","Kilo","Kasiniemi","Lukonmäki"]
+
   const [location, setLocation] = useState("Oulunkylä");
   const [forecastData, setForecastData] = useState(null);
-
-  const options = [
-    { label: 'Ogeli', value: 'oulunkylä' },
-    { label: 'Mögi', value: 'kasiniemi' },
-    { label: 'Zilo', value: 'kilo' },
-    { label: 'Städi', value: 'helsinki'}
-  ];
 
   let dataRefreshIntervalId;
 
@@ -94,21 +89,8 @@ function App() {
   return (
     <div className="App">
       <div className="nav-bar">
-        <form>
-          <label>
-            {location}
-            <select value={location} onChange={(e) => {
-              setLocation(e.target.value)
-              setForecastData(null)
-              }}>
-              {options.map((option) => (
-                <option value={option.value}>{option.label}</option>
-              ))}
-            </select>
-          </label>
-        </form>
+        <Dropdown data = {options} item = {location} setLocation={setLocation} setForecastData={setForecastData} />
       </div>
-      <Dropdown/>
       <div className="main-container">
         <div className="weather-container">
           {forecastData && forecastData.map( (hour) => <HourForecastBlock data = {hour} /> )}

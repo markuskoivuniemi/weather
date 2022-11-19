@@ -1,21 +1,21 @@
 import "./Dropdown.css"
 import React, {useState} from "react";
 
-export const Dropdown = ({}) => {
+export const Dropdown = ({data, item, setLocation, setForecastData}) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleDropdown = () => setIsOpen(!isOpen);
 
-    const [selection, setSelection] = useState(null);
     const selectOption = value => () => {
-        setSelection(value);
+        setLocation(value);
+        setForecastData(null)
         setIsOpen(false);
     };
     
-    const options = ["kek", "kik", "kok"]
+    const options = data;
 
   return(
     <div className="Dropdown">
-        <div className="DropdownHeader" onClick={toggleDropdown}>{selection}</div>
+        <div className="DropdownHeader" onClick={toggleDropdown}>{item}</div>
         {isOpen && (
             <div className="DropdownListDiv">
                 <ul className="DropdownList">

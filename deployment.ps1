@@ -1,3 +1,5 @@
+#REMEMBER TO RUN "npm run build" BEFORE DEPLOYMENT
+
 #Variables
 $rgName = 'rg-mk-weather'
 $location = 'northeurope'
@@ -10,7 +12,7 @@ $azCtx = Get-AzContext
 if ($azCtx.Tenant.Id -ne '580e44e4-3c09-4663-b356-04029d29206b')
 {
     Write-Host 'No valid Azure context found, connecting.'
-    Connect-AzAccount -TenantId '580e44e4-3c09-4663-b356-04029d29206b' -SubscriptionId 'fb47d756-ad0c-4f3a-b36b-f24cac24b0e3'
+    Connect-AzAccount -TenantId '580e44e4-3c09-4663-b356-04029d29206b' -SubscriptionId 'fb47d756-ad0c-4f3a-b36b-f24cac24b0e3' -UseDeviceAuthentication
 }
 
 $rg = Get-AzResourceGroup -Name $rgName -ErrorVariable rgNotPresent -ErrorAction SilentlyContinue
