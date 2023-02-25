@@ -5,8 +5,8 @@ var webAppName = 'app-${resourceNameFix}-01'
 
 var appServicePlanName = toLower('AppServicePlan-${webAppName}')
 var webSiteName = toLower('${webAppName}')
-var webAppSku = 'F1' //F1=Free
-var linuxFxVersion = 'node|14-lts' //Runtime stack
+var webAppSku = 'F1' // F1=Free
+var linuxFxVersion = 'node|14-lts' // Runtime stack
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2020-06-01' = {
   name: appServicePlanName

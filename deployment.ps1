@@ -1,12 +1,11 @@
 #REMEMBER TO RUN "npm run build" BEFORE DEPLOYMENT
 
-#Variables
 $rgName = 'rg-mk-weather'
 $location = 'northeurope'
 $resourceNameFix = 'mk-weather'
 
 
-#SCRIPT EXECUTION BEGINS HERE
+# SCRIPT EXECUTION BEGINS HERE
 $azCtx = Get-AzContext
 
 if ($azCtx.Tenant.Id -ne '580e44e4-3c09-4663-b356-04029d29206b')
