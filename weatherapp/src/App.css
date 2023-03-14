@@ -41,7 +41,7 @@ body {
     height:100vh;
     width:100vw;
     opacity: 0.8;
-    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #FFF5EE 10px ), repeating-linear-gradient( #F5F5DC, #FFFFF0 );
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #C8AD7F 10px ), repeating-linear-gradient( #F5F5DC, #9F8C76 );
 }
 
 .nav-bar {
